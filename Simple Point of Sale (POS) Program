@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class MathProblemSolver {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        while (true) {
+            // Display menu
+            displayMenu();
+
+            // Get user input for the math topic
+            choice = getUserChoice(scanner);
+
+            // Perform calculations based on user choice
+            switch (choice) {
+                case 1:
+                    solveTrigonometryProblem();
+                    break;
+                case 2:
+                    solveSolidMensurationProblem();
+                    break;
+                case 3:
+                    solveGeometryProblem();
+                    break;
+                // Add more cases for additional math topics
+
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
+            }
+
+            // Ask user if they want to continue
+            if (!continueProgram(scanner)) {
+                break; // Exit the loop if the user chooses not to continue
+            }
+        }
+
+        // Display farewell message
+        displayFarewellMessage();
+    }
+
+    // Define functions
+    private static void displayMenu() {
+        System.out.println("Math Problem Solver Menu");
+        System.out.println("1. Trigonometry");
+        System.out.println("2. Solid Mensuration");
+        System.out.println("3. Geometry");
+        // Add more options for additional math topics
+    }
+
+    private static int getUserChoice(Scanner scanner) {
+        System.out.print("Enter your choice: ");
+        return scanner.nextInt();
+    }
+
+    private static void solveTrigonometryProblem() {
+        // Implement trigonometry problem-solving logic
+        System.out.println("Solving Trigonometry Problem...");
+    }
+
+    private static void solveSolidMensurationProblem() {
+        // Implement solid mensuration problem-solving logic
+        System.out.println("Solving Solid Mensuration Problem...");
+    }
+
+    private static void solveGeometryProblem() {
+        // Implement geometry problem-solving logic
+        System.out.println("Solving Geometry Problem...");
+    }
+
+    // Add more functions for additional math topics
+
+    private static boolean continueProgram(Scanner scanner) {
+        System.out.print("Do you want to continue? (yes/no): ");
+        String response = scanner.next().toLowerCase();
+        return response.equals("yes");
+    }
+
+    private static void displayFarewellMessage() {
+        System.out.println("Thank you for using the Math Problem Solver. Goodbye!");
+    }
+}
